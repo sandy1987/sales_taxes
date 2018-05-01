@@ -28,6 +28,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Capybara::DSL
   config.include Shoulda::Callback::Matchers::ActiveModel
+  config.include TestApplicationHelpers
 
   config.exceptions_to_retry = [Net::ReadTimeout]
 
@@ -45,6 +46,7 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
+    load "#{Rails.root}/db/seeds.rb"
   end
 
   config.before(:each) do

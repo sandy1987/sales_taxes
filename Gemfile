@@ -20,6 +20,7 @@ gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'pry'
+  gem 'faker'
   gem "factory_bot_rails"
 end
 
@@ -35,7 +36,6 @@ group :test do
   gem 'rails-controller-testing'
   gem "chromedriver-helper"
   gem 'shoulda-callback-matchers', '~> 1.1.1'
-  gem 'faker'
 end
 
 group :development do
