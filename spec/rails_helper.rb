@@ -13,6 +13,14 @@ require 'capybara/rspec'
 require 'rspec/retry'
 require 'devise'
 
+module TestApplicationHelpers
+  def current_user
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    @current_user = User.first
+    sign_in(@current_user)
+  end
+end
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
