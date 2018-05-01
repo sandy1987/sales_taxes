@@ -20,6 +20,21 @@ gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'pry'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.6'
+  gem 'spring-commands-rspec'
+  gem 'webmock'
+  gem 'database_cleaner'
+  gem 'rspec-retry'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
+  gem "chromedriver-helper"
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
 end
 
 group :development do
