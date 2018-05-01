@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_id: 1
+  item_name: 
+  quantity: 1
+  cost: 1.5
+  sale_tax: 1.5
+  import_tax: 1.5
+
+two:
+  order_id: 1
+  item_name: 
+  quantity: 1
+  cost: 1.5
+  sale_tax: 1.5
+  import_tax: 1.5

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 1.5
+  sale_tax: 1.5
+  import_tax: 1.5
+
+two:
+  name: MyString
+  price: 1.5
+  sale_tax: 1.5
+  import_tax: 1.5

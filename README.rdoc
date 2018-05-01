@@ -1,0 +1,12 @@
+== Sales Taxes
+
+Please follow steps to configure this project into your own local system, after done with clone.
+
+* Ruby version (2.5.0)
+* Rails version (5.1.0)
+* Postgres (0.21.0)
+* bundle install, rake db:create, rake db:migrate, rake db:seed
+* rails server (or) rails s
+* rspec (run this command to test the rspec inside the directory)
+
+Thank you !

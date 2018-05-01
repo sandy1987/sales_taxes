@@ -1,0 +1,36 @@
+<div class="col-md-4">
+  <%= nested_form_for(Order.new) do |f| %>
+    <div class="form-group">
+      <%= f.label :order_number %>
+      <%= f.text_field :order_number, value: SecureRandom.hex(6), readonly: true , class: "form-control" %>
+    </div>
+    <div class="order_item_form ">   
+      <%= f.fields_for :order_items do |order_item| %>
+        <div class="com-md-6">
+          <div class="form-group">
+            <%= order_item.select :item_name , options_for_select(Product.all.map{|product| [product.name, product.name, "data-price": product.price, "data-sale_tax": product.sale_tax, "data-import_tax": product.import_tax]}), {prompt: "Select Item"}, class: "form-control item_name" %>
+          </div>
+          <div class="form-group">
+            <%= order_item.number_field :quantity, placeholder: "Quantiry" ,class: "form-control quantity" %>
+          </div>
+          <div class="form-group">
+            <%= order_item.number_field :cost, readonly: true, placeholder: "Cost" ,class: "form-control", step: 0.0001 %>
+          </div>
+          <div class="form-group">
+            <%= order_item.number_field :sale_tax, readonly: true, placeholder: "Sale Tax" ,class: "form-control",step: 0.0001 %>
+          </div>
+          <div class="form-group">
+            <%= order_item.number_field :import_tax, readonly: true, placeholder: "Import Tax" ,class: "form-control", step: 0.0001  %>
+          </div>
+        </div>
+        <div class="com-md-6">
+          <%= order_item.link_to_remove "Remove", class: "btn btn-danger"%><br><br>
+        </div>
+      <% end %>
+      <%= f.link_to_add "+ New Item", :order_items , class: "float-right btn btn-info" %>
+    </div>
+    <div class="clearfix"></div><br><br>
+    <%= f.submit "Submit" , class: "btn btn-primary" %>
+  <% end %>
+</div>
+<%= javascript_include_tag '/assets/custom.js' %>

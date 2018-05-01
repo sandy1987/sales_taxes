@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  username: postgres
+  host: localhost
+  password: password
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: sales_taxes_dev
+
+test:
+  <<: *default
+  database: sales_taxes_test
+
+production:
+  <<: *default
+  database: sales_taxes_prod
